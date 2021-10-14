@@ -1,5 +1,3 @@
-PImage apple;
-
 import processing.sound.*;
 SoundFile move, eat, death;
 boolean isPlaying;
@@ -138,7 +136,7 @@ void gameStart() {
   gameOver = false;
 }
 
-// adds borders, makes the game look nicer
+// adds borders and background, makes the game look nicer
 void gameLook() {
   noStroke();
   // chess background
