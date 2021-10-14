@@ -1,5 +1,5 @@
 import processing.sound.*;
-SoundFile move, eat, death;
+SoundFile eat, death;
 boolean isPlaying;
 
 // list containing x, y co-ordinates of the blocks that make up the snake
@@ -19,7 +19,6 @@ boolean gameOver;
 void setup() {
   size(600, 600);
 
-  move = new SoundFile(this, "move.wav");
   eat = new SoundFile(this, "eat.mp3");
   death = new SoundFile(this, "death.mp3");
   isPlaying = false;
