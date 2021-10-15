@@ -1,6 +1,5 @@
 import processing.sound.*;
 SoundFile eat, death;
-boolean isPlaying;
 
 // list containing x, y co-ordinates of the blocks that make up the snake
 ArrayList<Integer> x = new ArrayList(), y = new ArrayList();
@@ -21,7 +20,7 @@ void setup() {
 
   eat = new SoundFile(this, "eat.mp3");
   death = new SoundFile(this, "death.mp3");
-  isPlaying = false;
+  death.amp(0.25);
 
   gameStart();
 }
@@ -91,15 +90,13 @@ void draw() {
     textAlign(CENTER);
     text("GAME OVER \n Your score: " + score + "\n Press Enter to restart", width / 2, height / 3);
 
-    if (!isPlaying) {
+    if (!death.isPlaying()) {
       death.play();
-      isPlaying = true;
     }
 
     if (keyCode == ENTER) {
       gameStart();
       death.stop();
-      isPlaying = false;
     }
   }
 }
